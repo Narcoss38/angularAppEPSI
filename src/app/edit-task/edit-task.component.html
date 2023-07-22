@@ -1,0 +1,16 @@
+<body>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <label>Nom de la tâche:</label>
+    <input type="text" formControlName="name" required>
+
+    <label>Description:</label>
+    <textarea formControlName="description"></textarea>
+
+    <label>
+      Terminée:
+      <input type="checkbox" formControlName="completed">
+    </label>
+
+    <button type="submit">Enregistrer</button>
+  </form>
+</body>
