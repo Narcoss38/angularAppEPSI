@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<body>
+  <div class="container">
+    <div *ngFor="let task of filteredTasks" class="element">
+      <p>
+        <a [routerLink]="['/edit-task', task.id]">
+          <i *ngIf="task.completed" class="fas fa-check" style="color: green;"></i> 
+          <i *ngIf="!task.completed" class="fas fa-close" style="color: red;"></i> 
+          {{ task.name }}     {{ task.description }}
+        </a>
+      </p>
+      <hr>
+    </div>
+  
+    <div>
+      <button (click)="updateFilter('all')">Toutes</button>
+      <button (click)="updateFilter('completed')">Terminées</button>
+      <button (click)="updateFilter('todo')">À réaliser</button>
+    </div>
+    <div><button routerLink="/create-task">Créer une nouvelle tâche</button></div>
+  </div>
+</body>
